@@ -1,0 +1,38 @@
+random_state: 2022
+log_output: false
+out_dir: "./results_test"  # Required
+data_in:
+    csv: './data/dataset.csv'  # Required
+    pkl: './data/data_MC_SZ_dict_256x256.pkl'  # Required - PKL with images redimensioned to 256x256
+    models_ckpts_dir: './results'  # Required
+img_dim_ai: 256
+clahe:
+    enabled: true
+experimentDescription:
+    experiment_name: "exp_ISBI_2023"  # Required - Please, write here the name of the folder which contains the different folds and model weights trained (typically, "exp_DDMMYYYY_HHMMSS").
+experimentEnv:
+    models: ['LightTBNet_4blocks']  # Please, check that the model selected matches with the weights located inside the model checkpoint folder. See config_train.yaml for further information about the models implemented.
+    optimizers: ['Adam']  # Please, check that the optimizer selected matches with the weights located inside the model checkpoint folder
+    losses: ['FocalLoss']
+    ckpt_filename: "model_best.pth"  # "model_last.pth" to select the last model, not the best. Else, leave by default "model_best.pth"
+    num_classes: 2
+    training-dev_split: false
+    test_batch_size: 16
+    optim_args:
+        Adam:
+            learning_rate: 0.0001
+            beta_1: 0.9
+            beta_2: 0.999
+            weight_decay: 0.0001
+        SGD:
+            learning_rate: 0.01
+            weight_decay: 0.0001
+        RMSprop:
+            learning_rate: 0.01
+            weight_decay: 0.0001
+    apply_softmax: true
+    pred_thresh: 0.5
+    classes: ('no-TB', 'TB')
+    cross_validation: 
+        enabled: true
+        k: 5

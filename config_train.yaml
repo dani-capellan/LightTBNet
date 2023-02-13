@@ -1,0 +1,55 @@
+random_state: 2022
+log_output: true
+adapt_df: true
+out_training_dir: './results'
+data_in: 
+    csv: './data/dataset.csv'
+    pkl: './data/data_MC_SZ_dict_256x256.pkl'  # PKL with images redimensioned to 256x256
+img_dim_ai: 256
+wandb:
+    enable_tracking: false
+    save_test_predictions: false
+clahe:
+    enabled: true
+experimentDescription:
+    project_name: "[ISBI 2023] LightTBNet"
+    experiment_description: ""
+    experiment_name: ""  # By default and if nothing is written here, ""exp_DDMMYYYY_HHMMSS" will be defined as experiment name (timestamp).
+experimentEnv: 
+    models: ['LightTBNet_4blocks']  # Models implemented: ['LightTBNet_4blocks','DenseNet121','LightTBNet_3blocks','LightTBNet_4blocks','LightTBNet_5blocks','ResNet18','ResNet34','ResNet50','ResNet101','ResNet152','DenseNet121','EfficientNetB0','EfficientNetB1','EfficientNetB2','EfficientNetB3','EfficientNetB4','EfficientNetB5','EfficientNetB6','EfficientNetB7','EfficientNetv2_s','EfficientNetv2_m','EfficientNetv2_l','MobileNetv3_small','MobileNetv3_large']
+    optimizers: ['Adam']
+    losses: ['FocalLoss']
+    test_model: true
+    num_classes: 2
+    data_augmentation: true
+    training-dev_split: false
+    use_validation_split: true  # if false, train with the whole training set
+    batch_size: 16
+    test_batch_size: 32
+    optim_args:
+        Adam:
+            learning_rate: 0.0001
+            beta_1: 0.9
+            beta_2: 0.999
+            weight_decay: 0.0001
+        SGD:
+            learning_rate: 0.01
+            weight_decay: 0.0001
+        RMSprop:
+            learning_rate: 0.01
+            weight_decay: 0.0001
+    epochs: 100
+    trim_epochs_ratio: 1  # 1 -> All epochs are considered for best model selection
+    apply_softmax: true
+    pred_thresh: 0.5
+    save_model_on_epoch: 
+        enabled: true  # if false, no best model selection will be carried out.
+        freq: 10
+    post_training_remove_checkpoints: true  # if true, after training, all epoch checkpoints will be removed, just leaving the best one
+    classes: ('no-TB', 'TB')
+    cross_validation: 
+        enabled: true
+        k: 5
+
+    
+    
