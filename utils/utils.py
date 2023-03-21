@@ -127,12 +127,12 @@ def get_best_model_checkpoint(history,configs,model_name,optimizer_name,lossFn_n
             "best_epoch": best_epoch,  # Epoch starting with 0
             "best_val_loss": best_epoch_metrics["val_loss"],
             "best_val_acc": best_epoch_metrics["val_acc"],
-            "val_f1" : best_epoch_metrics["val_f1"],
-            "val_precision" : best_epoch_metrics["val_precision"],
-            "val_recall" : best_epoch_metrics["val_recall"],
-            "val_auc" : best_epoch_metrics["val_auc"],
-            "val_sn" : best_epoch_metrics["val_sn"],
-            "val_sp" : best_epoch_metrics["val_sp"]
+            "best_val_f1" : best_epoch_metrics["val_f1"],
+            "best_val_precision" : best_epoch_metrics["val_precision"],
+            "best_val_recall" : best_epoch_metrics["val_recall"],
+            "best_val_auc" : best_epoch_metrics["val_auc"],
+            "best_val_sn" : best_epoch_metrics["val_sn"],
+            "best_val_sp" : best_epoch_metrics["val_sp"]
         })
     # Get best model
     best_model_path = os.path.join(configs['out_training_dir'],configs['experimentDescription']['experiment_name'],model_name,optimizer_name,lossFn_name,f"fold_{str(fold)}",f"epoch_{str(best_epoch).zfill(len(str(configs['experimentEnv']['epochs'])))}","model.pth")

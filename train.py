@@ -106,7 +106,17 @@ def train(configs, df, data, device):
                         }
 
                         # WandB – Initialize a new run
-                        wandb.init(project=configs['experimentDescription']['project_name'], group=configs['experimentDescription']['experiment_name'], job_type=model_name, id=configs['experimentDescription']['run_id'], save_code=True, tags=[model_name, optimizer_name, lossFn_name], config=cfg, reinit=True, resume='allow')
+                        wandb.init(
+                            project=configs['experimentDescription']['project_name'], 
+                            group=configs['experimentDescription']['experiment_name'], 
+                            job_type=model_name, 
+                            id=configs['experimentDescription']['run_id'], 
+                            save_code=True, 
+                            tags=[model_name, optimizer_name, lossFn_name], 
+                            config=cfg, 
+                            reinit=True, 
+                            resume='allow'
+                        )
                         wandb.watch_called = False # Re-run the model without restarting the runtime, unnecessary after our next release
 
                         # WandB – wandb.watch() automatically fetches all layer dimensions, gradients, model parameters and logs them automatically to your dashboard.

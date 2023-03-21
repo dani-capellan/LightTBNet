@@ -15,6 +15,7 @@ Tuberculosis (TB) is still recognized as one of the leading causes of death worl
 - [Table of Contents](#table-of-contents)
 - [Installation](#installation)
 - [Usage](#usage)
+    - [Custom dataset](#custom-dataset)
     - [Training](#training)
     - [Testing](#testing)
     - [Useful Tips and Considerations](#useful-tips-and-considerations)
@@ -42,6 +43,25 @@ We highly recommend creating a virtual environment for this task. Please follow 
 
 ---
 ## Usage
+
+### Custom dataset
+
+You can use your own dataset by following the next steps:
+
+1. Create a CSV with your custom dataset (see `data -> dataset.csv` and follow the same format). The split of the data should be already done at this point (column `split` and `fold_cv`(if cross-validation) contain this information).
+
+2. Create a pickle file (`.pkl`) with a Python dict containing the images in numpy arrays the following way:
+
+    ```
+    dict: {
+        <filename1>: <Numpy Array1, 256x256>,
+        <filename2>: <Numpy Array2, 256x256>,
+        <filename3>: <Numpy Array3, 256x256>,
+        ...
+        <filenameN>: <Numpy ArrayN, 256x256>,
+    }
+    ```
+    Where `<filename>` corresponds to the value of the filename field that appears in the corresponding row of the dataset (CSV). This is done this way to facilitate data access and to allow faster training than accessing and preprocessing the images at each step.
 
 ### Training
 
