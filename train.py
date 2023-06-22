@@ -31,10 +31,23 @@ def train(configs, df, data, device):
 
                     if(configs['experimentEnv']['cross_validation']['enabled'] and configs['experimentEnv']['use_validation_split']):
                         # Training
-                        df_train = df[(df['split']=='training') & (df["filename"].notnull()) & (df['fold_cv']!=fold)].reset_index()
+                        df_train = df[(df['split'].isin(['train', 'training'])) & (df["filename"].notnull()) & (df['fold_cv']!=fold)].reset_index()
                         train_data = MCSZDataset(df_train, data, configs, do_transform=configs['experimentEnv']['data_augmentation'], one_hot_encoding=True)
                         # Validation
-                        df_val = df[(df['split']=='training') & (df["filename"].notnull()) & (df['fold_cv']==fold)].reset_index()
+                        df_val = df[(df['split'].isin(['train', 'training'])) & (df["filename"].notnull()) & (df['fold_cv']==fold)].reset_index()
+                        val_data = MCSZDataset(df_val, data, configs, do_transform=False, one_hot_encoding=True)
+                        # Loaders
+                        trainDataLoader = torch.utils.data.DataLoader(train_data, batch_size=configs['experimentEnv']['batch_size'], shuffle=True, num_workers=0)
+                        valDataLoader = torch.utils.data.DataLoader(val_data, batch_size=configs['experimentEnv']['batch_size'], shuffle=False, num_workers=0)
+                        # calculate steps per epoch for training and validation set
+                        trainSteps = len(trainDataLoader.dataset) // configs['experimentEnv']['batch_size']
+                        valSteps = len(valDataLoader.dataset) // configs['experimentEnv']['batch_size']
+                    elif(not(configs['experimentEnv']['cross_validation']['enabled']) and configs['experimentEnv']['use_validation_split']):
+                        # Training
+                        df_train = df[(df['split'].isin(['train', 'training'])) & (df["filename"].notnull())].reset_index()
+                        train_data = MCSZDataset(df_train, data, configs, do_transform=configs['experimentEnv']['data_augmentation'], one_hot_encoding=True)
+                        # Validation
+                        df_val = df[(df['split'].isin(['val', 'validation'])) & (df["filename"].notnull())].reset_index()
                         val_data = MCSZDataset(df_val, data, configs, do_transform=False, one_hot_encoding=True)
                         # Loaders
                         trainDataLoader = torch.utils.data.DataLoader(train_data, batch_size=configs['experimentEnv']['batch_size'], shuffle=True, num_workers=0)
