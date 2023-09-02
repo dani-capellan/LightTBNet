@@ -160,9 +160,9 @@ def remove_checkpoints(PATH, configs):
 
 
 def print_cite(configs):
-    print_and_log("\nPlease cite the following paper when using LightTBNet:\n\nCapellán-Martín, D., Gómez-Valverde, J.J., Bermejo-Peláez, D. et al. "
-      "\"A lightweight, rapid and efficient deep convolutional network for chest X-ray tuberculosis detection\" "
-      "2023 IEEE 20th International Symposium on Biomedical Imaging (ISBI 2023). https://doi.org/XXXXXXXXXXXXX\n", configs)
+    print_and_log("\nPlease cite the following paper when using LightTBNet:\n\nD. Capellán-Martín, J. J. Gómez-Valverde, D. Bermejo-Peláez and M. J. Ledesma-Carbayo. "
+      "\"A Lightweight, Rapid and Efficient Deep Convolutional Network for Chest X-Ray Tuberculosis Detection,\" "
+      "2023 IEEE 20th International Symposium on Biomedical Imaging (ISBI), Cartagena, Colombia, 2023, pp. 1-5, doi: 10.1109/ISBI53787.2023.10230500.\n", configs)
     print_and_log("If you have questions or suggestions, feel free to open an issue at https://github.com/dani-capellan/LightTBNet\n", configs)
     
 
