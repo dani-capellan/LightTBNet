@@ -60,6 +60,17 @@ def init_log(configs, test=False):
     configs['logger'] = logger
     
     return configs
+
+
+def check_exp_name(s: str):
+    if (s==""):
+        print("ERROR: Experiment name not defined")
+        return False
+    elif(not(os.path.isdir(os.path.join("./results",s)))):
+        print("ERROR: Experiment name not found on ./results")
+        return False
+
+    return True
     
 
 def init(configs, test=False):
@@ -67,8 +78,8 @@ def init(configs, test=False):
     Function with some initialization steps
     '''
     if(test):
-        if configs['experimentDescription']['experiment_name'] == "" or configs['data_in']['csv'] == "" or configs['data_in']['pkl'] == "" or configs['data_in']['models_ckpts_dir'] == "" or configs['out_dir'] == "":
-            raise Exception("Please check you have entered all the information required in the corresponding config YAML file.")
+        if not(check_exp_name(configs['experimentDescription']['experiment_name'])) or configs['data_in']['csv'] == "" or configs['data_in']['pkl'] == "" or configs['data_in']['models_ckpts_dir'] == "" or configs['out_dir'] == "":
+            raise Exception("Please check you have correctly entered all the information required in the corresponding config YAML file.")
         configs['out_dir'] = os.path.join(configs['out_dir'],configs['experimentDescription']['experiment_name'])
     else:
         if configs['out_training_dir'] == "":
