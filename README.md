@@ -37,11 +37,7 @@ We highly recommend creating a virtual environment for this task. Please follow 
     conda activate cxr
     ```
 
-2. Install PyTorch as described on [their website](https://pytorch.org/get-started/locally/) (conda/pip). Please install the latest version and (IMPORTANT!) choose the highest CUDA version compatible with your drivers for maximum performance.
-
-3. (Optional) If you wish to use pretrained weights, you may download them from [here](docs/models.md).
-
-**Note: Make sure you have properly installed PyTorch with the highest CUDA version compatible with your drivers. Otherwise, the process may fail.**
+2. (Optional) If you wish to use pretrained weights, you may download them from [here](docs/models.md).
 
 ---
 ## Usage
