@@ -1,7 +1,7 @@
 # LightTBNet
 LightTBNet: A lightweight, rapid and efficient deep convolutional network for chest X-ray tuberculosis detection
 
-[Paper](https://doi.org/10.1109/ISBI53787.2023.10230500)
+[arXiv](https://doi.org/10.48550/arXiv.2309.02140)  |  [Paper](https://doi.org/10.1109/ISBI53787.2023.10230500)
 
 ## Introduction
 Tuberculosis (TB) is still recognized as one of the leading causes of death worldwide. Recent advances in deep learning (DL) have shown to enhance radiologists' ability to interpret chest X-ray (CXR) images accurately and with fewer errors, leading to a better diagnosis of this disease. However, little work has been done to develop models capable of diagnosing TB that offer good performance while being efficient, fast and computationally inexpensive. In this work, we propose LightTBNet, a novel lightweight, fast and efficient deep convolutional network specially customized to detect TB from CXR images. Using a total of 800 frontal CXR images from two publicly available datasets, our solution yielded an accuracy, F1 and area under the ROC curve (AUC) of 0.906, 0.907 and 0.961, respectively, on an independent test subset. The proposed model demonstrates outstanding performance while delivering a rapid prediction, with minimal computational and memory requirements, making it highly suitable for deployment in handheld devices that can be used in low-resource areas with high TB prevalence.
