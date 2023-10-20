@@ -22,6 +22,7 @@ Tuberculosis (TB) is still recognized as one of the leading causes of death worl
     - [Testing](#testing)
     - [Useful Tips and Considerations](#useful-tips-and-considerations)
 - [How to cite](#how-to-cite)
+- [References](#references)
 - [License](#license)
 
 ---
@@ -133,6 +134,13 @@ BibTeX format:
 ```
 
 DOI: https://doi.org/10.1109/ISBI53787.2023.10230500
+
+---
+## References
+
+Images in `data/data_MC_SZ_dict_256x256.pkl` are a preprocessed version from:
+
+[1] Jaeger, S., Candemir, S., Antani, S., Wáng, Y. X. J., Lu, P. X., & Thoma, G. (2014). Two public chest X-ray datasets for computer-aided screening of pulmonary diseases. Quantitative imaging in medicine and surgery, 4(6), 475.
 
 ---
 ## License
