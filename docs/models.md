@@ -3,13 +3,13 @@ All model weights used in the contribution for testing are incldued in the follo
 
 | **Model**                  	| **Link**                   	| **ZIP size** 	|
 |-------------------------------|-------------------------------|---------------|
-| LightTBNet (N=4)           	| https://short.upm.es/lxnlh 	| 156 MB  	    |
-| DenseNet-121          	    | https://short.upm.es/dp5al 	| 734 MB  	    |
-| EfficientNetB0           	    | https://short.upm.es/zxkn7 	| 427 MB  	    |
-| EfficientNetV2-s           	| https://short.upm.es/9ga8n 	| 2.11 GB  	    |
-| MobileNetv3-small           	| https://short.upm.es/7u52t 	| 164 MB  	    |
-| ResNet-18          	        | https://short.upm.es/9o61i 	| 1.14 GB  	    |
-| ResNet-34          	        | https://short.upm.es/51605 	| 2.18 GB  	    |
+| LightTBNet (N=4)           	| https://short.upm.es/i3xah 	| 156 MB  	    |
+| DenseNet-121          	    | https://short.upm.es/z856f 	| 734 MB  	    |
+| EfficientNetB0           	    | https://short.upm.es/kqirf 	| 427 MB  	    |
+| EfficientNetV2-s           	| https://short.upm.es/nrrat 	| 2.11 GB  	    |
+| MobileNetv3-small           	| https://short.upm.es/34l4v 	| 164 MB  	    |
+| ResNet-18          	        | https://short.upm.es/vrsz1 	| 1.14 GB  	    |
+| ResNet-34          	        | https://short.upm.es/n2lhl 	| 2.18 GB  	    |
 
 ---
 **IMPORTANT**
